@@ -1,5 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("./pages/img/palmtree.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
 }

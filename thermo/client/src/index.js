@@ -5,14 +5,16 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import Reducer from "./reducer";
+import water from "./reducers/water";
 
 
-var store = createStore(Reducer)
+var store = createStore(water);
+var destination = document.querySelector("#root");
 
 ReactDOM.render(
 <Provider store={store}>
-<App />
-</Provider>
-, document.getElementById('root'));
-registerServiceWorker();
+    <App />
+</Provider>,
+ destination
+);
+//registerServiceWorker();

@@ -81,4 +81,4 @@ var water = [];
 //DELETE EVERYTHING
 // Steam.sync({force: true}).then(() => { 
 //     });
- 
+module.exports.Steam = Steam; 

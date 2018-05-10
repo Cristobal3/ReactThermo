@@ -27,6 +27,8 @@
   to { transform: rotate(360deg); }
 }
 
-.Robot {
-  font-family: 'Roboto', sans-serif;
+.flex-container {
+  display: flex;
+  justify-content: center;
+  
 }
