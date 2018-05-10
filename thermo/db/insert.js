@@ -57,28 +57,31 @@ const Steam = sequelize.define('steam', {
 
 
 //console.log(tables.SatLiq_T[0]);
-var water = [];
- for (var i = 0;i<tables.SatLiq_T.length; i++) {
+// var water = [];
+//  for (var i = 0;i<tables.SatLiq_T.length; i++) {
 
-    // Table created
-    water[i] = Steam.create({
+//     // Table created
+//     water[i] = Steam.create({
       
-      Temperature: tables.SatLiq_T[i],
-      Pressure: tables.SatLiq_P[i],
-      SatLiq_Vf: tables.SatLiq_Vf[i],
-      SatLiq_Vg: tables.SatLiq_Vg[i],
-      SatLiq_Uf: tables.SatLiq_Uf[i],
-      SatLiq_Ug: tables.SatLiq_Ug[i],
-      SatLiq_Hf: tables.SatLiq_Hf[i],
-      SatLiq_Hfg: tables.SatLiq_Hfg[i],
-      SatLiq_Hg: tables.SatLiq_Hg[i],
-      SatLiq_Sf: tables.SatLiq_Sf[i],
-      SatLiq_Sg: tables.SatLiq_Sg[i]
-    });
+//       Temperature: tables.SatLiq_T[i],
+//       Pressure: tables.SatLiq_P[i],
+//       SatLiq_Vf: tables.SatLiq_Vf[i],
+//       SatLiq_Vg: tables.SatLiq_Vg[i],
+//       SatLiq_Uf: tables.SatLiq_Uf[i],
+//       SatLiq_Ug: tables.SatLiq_Ug[i],
+//       SatLiq_Hf: tables.SatLiq_Hf[i],
+//       SatLiq_Hfg: tables.SatLiq_Hfg[i],
+//       SatLiq_Hg: tables.SatLiq_Hg[i],
+//       SatLiq_Sf: tables.SatLiq_Sf[i],
+//       SatLiq_Sg: tables.SatLiq_Sg[i]
+//     });
 
- }
+//  }
 
 //DELETE EVERYTHING
 // Steam.sync({force: true}).then(() => { 
 //     });
+
 module.exports.Steam = Steam; 
+module.exports.seq= sequelize;
+module.exports.Sequelize= Sequelize;
