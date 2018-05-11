@@ -13,8 +13,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 return {
-  onGreeting: (result) => dispatch({
-    type: "message",
+  Oninterp: (result) => dispatch({
+    type: "data",
     total: result
   })
 }

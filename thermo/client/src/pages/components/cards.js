@@ -1,11 +1,27 @@
-import React from 'react';
+
+import React, { Component } from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import ContTab from './tabs'
-const CardxTab = () => (
+
+
+
+class CardxTab extends Component {
+
+    state = {
+        parameter: 0,
+        
+    }
+
+
+    tempReqHandler = (event) =>{
+    this.setState({productName: event.target.value});
+}
+
+    render (){
+        return(
   <Card>
-    <CardTitle title="Interpolation Tabs" subtitle="Card subtitle" />
-   
+    
       <ContTab/>
 
     <CardText>
@@ -17,6 +33,7 @@ const CardxTab = () => (
       <FlatButton label="More Thermo Stuff" />
     </CardActions>
   </Card>
-);
+        )}
+};
 
 export default CardxTab;

@@ -1,5 +1,17 @@
 import React from 'react';
+import PopoverM from './popMenu';
+import RaisedButton from 'material-ui/RaisedButton';
+
+
 import {Tabs, Tab} from 'material-ui/Tabs';
+import { red800, pink400, purple400,cyanA200 } from 'material-ui/styles/colors';
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+
+const style = {
+  marginLeft: 20,
+};
 
 const styles = {
   headline: {
@@ -30,24 +42,28 @@ export default class ContTab extends React.Component {
       <Tabs
         value={this.state.value}
         onChange={this.handleChange}
-        inkBarStyle={{background: 'yellow'}}
+        inkBarStyle={{background: 'black'}}
       >
         <Tab 
-        label="Tab A" value="a"
-        style={{background: 'red'}}
+        label="Custom Interpolation" value="a"
+        style={{background: pink400}}
         >
           <div>
             <h2 style={styles.headline}>Controllable Tab A</h2>
-            <p>
-              Tabs are also controllable if you want to programmatically pass them their values.
-              This allows for more functionality in Tabs such as not
-              having any Tab selected or assigning them different values. 
-            </p>
+            <Paper zDepth={2}>
+              <TextField hintText="First name" style={style} underlineShow={false} />
+             <center>
+              <PopoverM style={style}/>
+              <RaisedButton label="Primary" primary={true}  />
+              </center>
+            </Paper>
           </div>
         </Tab>
-        <Tab label="Tab B" value="b">
+        <Tab label="Steam Table Interp." value="b"
+        style={{background: purple400}}
+        >
           <div>
-            <h2 style={styles.headline}>Controllable Tab B</h2>
+            <h2 style={styles.headline}>Pick a liquid and then enter a temperature </h2>
             <p>
               This is another example of a controllable tab. Remember, if you
               use controllable Tabs, you need to give all of your tabs values or else
