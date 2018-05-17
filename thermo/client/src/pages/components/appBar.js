@@ -1,15 +1,13 @@
 import AppBar from 'material-ui/AppBar';
-import FontIcon from 'material-ui/FontIcon';
+
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
-import {red800} from 'material-ui/styles/colors';
-import {pink800} from 'material-ui/styles/colors';
-import {purple800} from 'material-ui/styles/colors';
+
 
 import Drawer from 'material-ui/Drawer';
-import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar'
+
 import MenuItem from 'material-ui/MenuItem';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 import React, {Component} from "react";
 
 
@@ -51,7 +49,7 @@ class AppBarM extends Component {
                     onRequestChange={(open) => this.setState({open})}>
 
                     <AppBar title=""showMenuIconButton={false}/>
-                    <MenuItem id="showFooId" >Home</MenuItem>
+                    <a href="/"><MenuItem id="showFooId" >Home</MenuItem></a>
                     <MenuItem id="showBarId" >Interpolation Page</MenuItem>
                     <MenuItem id="showBarId" >Additional Resources</MenuItem>
 

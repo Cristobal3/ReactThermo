@@ -1,10 +1,10 @@
 import React from 'react';
-import PopoverM from './popMenu';
+
 import RaisedButton from 'material-ui/RaisedButton';
-
-
+import NameForm from './form';
+import DataForm from './dataForm';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import { red800, pink400, purple400,cyanA200 } from 'material-ui/styles/colors';
+import { pink400, purple400 } from 'material-ui/styles/colors';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
@@ -28,48 +28,93 @@ export default class ContTab extends React.Component {
     super(props);
     this.state = {
       value: 'a',
+      pressure: 0,
+      steamData: 0, 
+      interpData: 0,
+      choice: '',
+      x1: 0,
+      x2: 0,
+      x3: 0,
+      y1: 0,
+      y3: 0,
     };
-  }
+    this.interpolate= this.interpolate.bind(this);
+    //this.callApi = this.callApi.bind(this);
+  };
 
   handleChange = (value) => {
     this.setState({
       value: value,
     });
   };
+  
+  callApi = async (url) => {
+        const response = await fetch(url);
+        const body = await response.json();
+    
+        if (response.status !== 200) throw Error(body.message);
+    
+        return body;
+      }; 
+  
+
+  
+
+
+interpolate = (type,x1,x2,x3,y1,y3) => {
+  console.log('its running')
+    if (type==='custom'){
+    var result = ((x2-x1)*(y3-y1))/(x3-x1) + y1;
+    console.log(result)
+this.setState({
+  interpData: result,
+
+})
+console.log(this.state.interpData)
+};
+}
+  
+
+
 
   render() {
     return (
       <Tabs
         value={this.state.value}
         onChange={this.handleChange}
-        inkBarStyle={{background: 'black'}}
+        inkBarStyle={{background: 'cyan'}}
       >
         <Tab 
-        label="Custom Interpolation" value="a"
+        label="Steam Table Interpolation" value="a"
         style={{background: pink400}}
         >
           <div>
-            <h2 style={styles.headline}>Controllable Tab A</h2>
+            <center><h2 style={styles.headline}><b>Specify a Temperature and a Parameter to Interpolate</b></h2></center>
             <Paper zDepth={2}>
-              <TextField hintText="First name" style={style} underlineShow={false} />
-             <center>
-              <PopoverM style={style}/>
-              <RaisedButton label="Primary" primary={true}  />
+            <center>
+              
+             < DataForm interpolate={this.interpolate} callApi={this.callApi}/>
+              <br />
               </center>
             </Paper>
           </div>
         </Tab>
-        <Tab label="Steam Table Interp." value="b"
+        <Tab label="Custom Interpolation" value="b"
         style={{background: purple400}}
         >
+        <Paper zDepth={2}>
           <div>
-            <h2 style={styles.headline}>Pick a liquid and then enter a temperature </h2>
-            <p>
-              This is another example of a controllable tab. Remember, if you
-              use controllable Tabs, you need to give all of your tabs values or else
-              you wont be able to select them.
-            </p>
+            
+            <div >
+            <center> <img src={require("../img/interp.png")}/></center>
+            </div>}
+             <center><NameForm interpolate={this.interpolate} callApi={this.callApi}/></center>
+             <center> 
+             <h3>Result: {this.state.interpData}</h3>
+              
+              </center>
           </div>
+          </Paper>
         </Tab>
       </Tabs>
     );

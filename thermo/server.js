@@ -1,19 +1,25 @@
 const express = require('express');
+var bodyParser = require("body-parser");
 const db = require('./db/insert')
 const app = express();
 const port = process.env.PORT || 5000;
 
-var info
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
+
+var info
+var data = [];
 function displayResults(results) {
-  var data
+  
   results.forEach(function (c) {
-      //console.dir(c.toJSON());
-      data = c.toJSON();
+      console.dir(c.toJSON());
+       data[0] = c.toJSON();
   });
   console.log('------------------------------------');
+  console.log(data)
 
-  return data
+  
 }
 
 function dataRetrieve(parameter) {
@@ -22,21 +28,35 @@ function dataRetrieve(parameter) {
     where: {
       Temperature: parameter
     }
-  }).then(displayResults).then(function (data){
-    console.log(data)
-    info = data;
-  });
-console.log(info)
-return info
-
+  }).then((a) => {
+res.json({a})
+  })
+  return true
 }
 
-app.get('/api/temp/:usrTemp', (req, res) => {
+app.get('/api/temp/:usrTemp', function (req, res) {
   var parameter = req.params.usrTemp;
-  dataRetrieve(parameter).then(
-  res.send(
-    info
-  ))
+  
+  //cry = async function (parameter) {
+    // const info = await 
+    db.Steam.findAll({
+      where: {
+        Temperature: parameter
+      }
+    }).then((a) => {
+  res.json({a})
+    })  
+
+      
+    //const espera = await res.send({data})
+
+    
+   
+    
+  // }
+  // cry(parameter);
+  console.log('2')
+
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

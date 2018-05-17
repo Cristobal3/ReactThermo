@@ -7,15 +7,16 @@ import Landing  from "./pages/landing"
 
 function mapStateToProps(state) {
   return {
-    total: state.total
+    customInterp: state.customInterp,
+    chosen: state.chosen
   }
 }
 
 function mapDispatchToProps(dispatch) {
 return {
   Oninterp: (result) => dispatch({
-    type: "data",
-    total: result
+    type: "customInterp",
+    customInterp: result
   })
 }
 }

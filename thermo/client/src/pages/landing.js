@@ -3,10 +3,11 @@ import React, {Component} from "react";
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {red800} from 'material-ui/styles/colors';
-
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import AppBarM from './components/appBar'
 import CardxTab from './components/cards';
-import PopoverM from './components/popMenu';
+import {row, col} from 'react-bootstrap'
+
 
 
 const muiTheme = getMuiTheme({
@@ -15,6 +16,7 @@ const muiTheme = getMuiTheme({
       height: 50,
       color: red800,
     },
+    darkBaseTheme
     
     
   });
@@ -77,7 +79,8 @@ class Landing extends Component {
 
 
     <AppBarM/>
-    <CardxTab interp={this.props.Oninterp}/>
+    <div className="space"></div>
+    <CardxTab interp={this.props.Oninterp} customInterp={this.props.customInterp} chosen={this.props.chosen}/>
 
     </div>
          </MuiThemeProvider>

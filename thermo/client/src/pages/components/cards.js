@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import ContTab from './tabs'
 
@@ -14,10 +14,10 @@ class CardxTab extends Component {
     }
 
 
-    tempReqHandler = (event) =>{
-    this.setState({productName: event.target.value});
+     tempReqHandler = (event) =>{
+    this.setState({parameter: event.target.value});
 }
-
+     
     render (){
         return(
   <Card>
@@ -29,7 +29,7 @@ class CardxTab extends Component {
       click on the appbar logo!
     </CardText>
     <CardActions>
-      <FlatButton label="Github" />
+      <a href="https://github.com/Cristobal3/ReactThermo/tree/master/thermo"><FlatButton label="Github" /></a>
       <FlatButton label="More Thermo Stuff" />
     </CardActions>
   </Card>
