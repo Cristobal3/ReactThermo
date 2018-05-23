@@ -64,14 +64,17 @@ export default class ContTab extends React.Component {
 interpolate = (type,x1,x2,x3,y1,y3) => {
   console.log('its running')
     if (type==='custom'){
-    var result = ((x2-x1)*(y3-y1))/(x3-x1) + y1;
+    var result = (((x2-x1)*(y3-y1))/(x3-x1) + y1).toFixed(3);
     console.log(result)
 this.setState({
   interpData: result,
 
-})
+});
 console.log(this.state.interpData)
-};
+} else {
+  var result = (((x2-x1)*(y3-y1))/(x3-x1) + y1).toFixed(3);
+  return result
+}
 }
   
 
