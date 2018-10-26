@@ -50,8 +50,8 @@ class AppBarM extends Component {
 
                     <AppBar title=""showMenuIconButton={false}/>
                     <a href="/"><MenuItem id="showFooId" >Home</MenuItem></a>
-                    <MenuItem id="showBarId" >Interpolation Page</MenuItem>
-                    <MenuItem id="showBarId" >Additional Resources</MenuItem>
+                    <MenuItem id="showBarId" target="_blank" href="http://thermopedia.com/content/1150Begal">Steam Tables</MenuItem>
+                    <MenuItem id="showBarId" target="_blank" href="http://www.eng.fsu.edu/~dommelen/courses/eml3100/aids/intpol/">Additional Resources</MenuItem>
 
 
                 </Drawer>

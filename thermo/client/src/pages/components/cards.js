@@ -25,12 +25,11 @@ class CardxTab extends Component {
       <ContTab/>
 
     <CardText>
-      To see the source code click the github link below. If you would like to see examples of interpolation aplied
-      click on the appbar logo!
+      To see the source code click the github link below.
     </CardText>
     <CardActions>
-      <a href="https://github.com/Cristobal3/ReactThermo/tree/master/thermo"><FlatButton label="Github" /></a>
-      <FlatButton label="More Thermo Stuff" />
+      <a target="_blank" href="https://github.com/Cristobal3/ReactThermo/tree/master"><FlatButton label="Github" /></a>
+      <FlatButton label="More Thermo Stuff" target="_blank" href="https://www.britannica.com/science/thermodynamics"/>
     </CardActions>
   </Card>
         )}

@@ -20,20 +20,7 @@ const muiTheme = getMuiTheme({
     
     
   });
-  
-
-
-
-//
-// state = {
-    //     response: ''
-    //   };
-    //   componentDidMount() {
-    //     this.callApi()
-    //       .then(res => this.setState({ response: res.express }))
-    //       .catch(err => console.log(err));
-    //   }
-    
+      
      const callApi = async (url) => {
         const response = await fetch(url);
         const body = await response.json();
@@ -46,33 +33,10 @@ const muiTheme = getMuiTheme({
       
 
 class Landing extends Component {
-    
-
-    
-
-    // showBar = () => {
-    //     this.setState({show: 'bar', open: false });
-    // };
-
-    // showFoo = () => {
-    //     this.setState({show: 'foo', open: false });
-    // };
 
     render() {
         let content = null;
 
-        // switch(this.state.show) {
-        //     case 'foo':
-        //         content = (<Foo/>);
-        //         break;
-
-        //     case 'bar':
-        //         content = (<Bar/>);
-        //         break;
-
-        //     default:
-        //         content = <h1>Waiting</h1>
-        // }
         return (
           <MuiThemeProvider muiTheme={muiTheme}>
          <div>

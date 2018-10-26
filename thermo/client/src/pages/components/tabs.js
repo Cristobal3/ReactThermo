@@ -1,17 +1,14 @@
 import React from 'react';
 
-import RaisedButton from 'material-ui/RaisedButton';
+ 
 import NameForm from './form';
 import DataForm from './dataForm';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import { pink400, purple400 } from 'material-ui/styles/colors';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 
-const style = {
-  marginLeft: 20,
-};
+import Paper from 'material-ui/Paper';
+
+
 
 const styles = {
   headline: {
@@ -72,7 +69,7 @@ this.setState({
 });
 console.log(this.state.interpData)
 } else {
-  var result = (((x2-x1)*(y3-y1))/(x3-x1) + y1).toFixed(3);
+  result = (((x2-x1)*(y3-y1))/(x3-x1) + y1).toFixed(3);
   return result
 }
 }
@@ -109,7 +106,7 @@ console.log(this.state.interpData)
           <div>
             
             <div >
-            <center> <img src={require("../img/interp.png")}/></center>
+            <center> <img alt="missing img" src={require("../img/interp.png")}/></center>
             </div>}
              <center><NameForm interpolate={this.interpolate} callApi={this.callApi}/></center>
              <center> 
