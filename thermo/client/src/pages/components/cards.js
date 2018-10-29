@@ -28,8 +28,8 @@ class CardxTab extends Component {
       To see the source code click the github link below.
     </CardText>
     <CardActions>
-      <a target="_blank" href="https://github.com/Cristobal3/ReactThermo/tree/master"><FlatButton label="Github" /></a>
-      <FlatButton label="More Thermo Stuff" target="_blank" href="https://www.britannica.com/science/thermodynamics"/>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/Cristobal3/ReactThermo/tree/master"><FlatButton label="Github" /></a>
+      <FlatButton label="More Thermo Stuff" target="_blank" rel="noopener noreferrer" href="https://www.britannica.com/science/thermodynamics"/>
     </CardActions>
   </Card>
         )}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PopoverM from './popMenu';
 var inter = require( '../../actions/interp');
-var proper = [];
+
 
 
 export default class DataForm extends Component {
@@ -43,10 +43,10 @@ export default class DataForm extends Component {
     getData = (bounds,callback) => {
         console.log(bounds)
         var x,y
-        if (bounds.length == 1) {
+        if (bounds.length === 1) {
         let url = '/api/temp/' + bounds[0];  
         
-        let stuff = this.props.callApi(url).then((result) =>{ 
+        this.props.callApi(url).then((result) =>{ 
            
             let inter = callback(this.state.select, 1, result)
             this.setState({

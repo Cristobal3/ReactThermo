@@ -15,7 +15,7 @@ function water(state, action) {
       console.log(state)     
         return {
             ...state,
-            customInterp: state.customInterp + parseInt(action.customInterp),
+            customInterp: state.customInterp + parseInt(action.customInterp, 10),
             // messages: state.messages.concat({
             //     messages: action.message.greeting,
                 
@@ -25,7 +25,7 @@ function water(state, action) {
         case "steamInterp" :
         return {
             ...state,
-            chosen: state.chosen + parseInt(action.chosen),
+            chosen: state.chosen + parseInt(action.chosen, 10),
         }                                
       default:
         return state;
