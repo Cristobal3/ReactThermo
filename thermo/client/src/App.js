@@ -1,7 +1,6 @@
 
 import { connect } from "react-redux";
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Landing  from "./pages/landing"
 
 

@@ -6,7 +6,7 @@ import {red800} from 'material-ui/styles/colors';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import AppBarM from './components/appBar'
 import CardxTab from './components/cards';
-import {row, col} from 'react-bootstrap'
+
 
 
 
@@ -35,7 +35,7 @@ const muiTheme = getMuiTheme({
 class Landing extends Component {
 
     render() {
-        let content = null;
+        
 
         return (
           <MuiThemeProvider muiTheme={muiTheme}>
